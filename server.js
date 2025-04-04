@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: 'https://dev-connect-kappa-five.vercel.app', // your frontend URL
+    origin: 'https://dev-connect-kappa-five.vercel.app', 
     credentials: true
   }));
 app.use("/api/posts", postRoutes);
