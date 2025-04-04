@@ -5,12 +5,14 @@ const dotenv = require('dotenv');
 const postRoutes = require("./routes/postRoutes");
 const authRoutes = require("./routes/authRoutes");
 
-
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://dev-connect-kappa-five.vercel.app', // your frontend URL
+    credentials: true
+  }));
 app.use("/api/posts", postRoutes);
 app.use("/api/auth", authRoutes);
 
